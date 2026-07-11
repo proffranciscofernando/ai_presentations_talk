@@ -149,6 +149,11 @@
     font-family: 'Helvetica Neue', Arial, sans-serif; font-size: .8rem; color: rgba(20,38,59,.5);
     background: rgba(246,239,221,.7); padding: .2em .6em; border-radius: 1em;
   }
+  #presenterName {
+    position: fixed; bottom: 12px; left: 16px; z-index: 50;
+    font-family: 'Helvetica Neue', Arial, sans-serif; font-size: .8rem; color: rgba(20,38,59,.5);
+    background: rgba(246,239,221,.7); padding: .2em .6em; border-radius: 1em;
+  }
   #notesPanel {
     position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow-y: auto;
     background: rgba(20,38,59,.96); color: var(--paper); padding: 1.2rem 2rem 1.6rem;
@@ -201,7 +206,16 @@
     <div class="kicker">A practical talk · 30 minutes</div>
     <h1>Stop making slides.<br>Start creating <span class="hl">presentations</span>.</h1>
     <p class="sub">How to use AI properly for the task — and build decks that are genuinely different.</p>
-    <p class="sub" style="margin-top:2.5rem; font-size:1rem;">Your Name · Your Institution · 2026</p>
+    <div class="cols" style="align-items:flex-end; margin-top:2.5rem;">
+      <div style="flex:2.6;">
+        <p class="sub" style="font-size:1rem; margin:0;">Francisco Fernando Roberto Pereira, PhD · 2026</p>
+        <p class="sub" style="margin-top:.3rem; font-size:.95rem;"><a href="https://www.linkedin.com/in/engfranciscofernando/" style="color:inherit;">linkedin.com/in/engfranciscofernando</a></p>
+      </div>
+      <div class="qr-box" style="flex:1; text-align:center;">
+        <img class="linkedin-qr" style="width:min(150px, 16vw);" alt="QR code to LinkedIn profile" src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&color=14263b&bgcolor=f6efdd&data=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fengfranciscofernando%2F">
+        <div class="url" style="color:var(--accent-soft); font-size:.8rem;">Connect on LinkedIn</div>
+      </div>
+    </div>
     <aside class="notes">Welcome everyone. Settle the room. One line of promise: "In the next thirty minutes I'll try to change how you think about the most boring artefact in professional life: the slide deck." Don't reveal the method yet.</aside>
   </section>
 
@@ -545,6 +559,7 @@
 
 <div id="progress"></div>
 <div id="counter"></div>
+<div id="presenterName">Francisco Fernando Roberto Pereira, PhD</div>
 <div id="notesPanel"><span class="tag">Speaker notes — press N to hide</span><div id="notesText"></div></div>
 
 <script>
@@ -610,6 +625,7 @@ const isVoteMode = new URLSearchParams(location.search).has("vote");
 if (isVoteMode) {
   document.getElementById("deck").style.display = "none";
   document.getElementById("counter").style.display = "none";
+  document.getElementById("presenterName").style.display = "none";
   document.getElementById("voteView").style.display = "block";
   document.documentElement.style.overflow = "auto";
   document.body.style.overflow = "auto";
