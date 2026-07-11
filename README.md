@@ -4,6 +4,8 @@ A complete, self-contained **30-minute talk** built exactly as the talk itself r
 
 Line of argument based on InvestNews BR's video *"Chega de slides: A revolução dos assistentes de IA para criar apresentações"* (July 2026). All materials in British English.
 
+**Live:** [talk.franciscofernando-ai.workers.dev](https://talk.franciscofernando-ai.workers.dev/) — presenter deck and live poll API deployed together as a single Cloudflare Worker. Audience voting page: `.../?vote`.
+
 ## Contents
 
 | File | What it is |
